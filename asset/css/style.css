@@ -508,3 +508,16 @@ a.btn-goback:hover {
   fill: #1059FF;
   transform: rotate(180deg);
 }
+
+.passAlert{
+  font-size: 0px;
+  color: #F00;
+  font-weight:normal;
+  position: absolute;
+  bottom: -15px;
+
+}
+
+.passAlert.active{
+  font-size: 14px;
+}

@@ -1,3 +1,5 @@
+
+
 $(function() {
 	$(".btn").click(function() {
 		$(".form-signin").toggleClass("form-signin-left");
@@ -12,26 +14,35 @@ $(function() {
 
 $(function() {
 	$(".btn-signup").click(function() {
-    const pass = document.getElementsByName("password")[0]?.value;
+    const pass = document.getElementsByName("password-signup")[0]?.value;
     const conPass = document.getElementsByName("confirmpassword")[0]?.value;
+    const username = document.getElementsByName("username-signup")[0]?.value;
+    const email = document.getElementsByName("email")[0]?.value;
+    
+
+    const passAlert=document.getElementById("passAlert")
 
     console.log(pass);
     console.log(conPass);
     
 
-    if (!pass || !conPass) {
-      alert("Please fill in both password fields.");
+    if (!pass || !conPass || !username || !email) {
+      passAlert.textContent="Please fill in all fields."
+      passAlert.classList.add("active")
       return;
     }
 
-    if (pass !== conPass) {
-      alert("Passwords do not match.");
-    } else {
-      alert("Passwords match! Proceeding...");
+    else if (pass !== conPass) {
+      passAlert.textContent="Passwords do not match."
+      passAlert.classList.add("active")
+    } 
+    else{
+      passAlert.classList.remove("active")
           $(".nav").toggleClass("nav-up");
           $(".form-signup-left").toggleClass("form-signup-down");
           $(".success").toggleClass("success-left"); 
           $(".frame").toggleClass("frame-short");
+          saveUser()
     }
 	});
 });
