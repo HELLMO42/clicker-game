@@ -1,0 +1,91 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #fceabb;
+}
+
+#pie-area {
+  height: fit-content;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+  animation: spin 10s linear infinite;
+}
+
+#pie{
+  width: 400px;
+}
+
+#pie:active {
+  transform: scale(0.9);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.ugrade-btn-container{
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid darkred;
+  background-color: chocolate;
+}
+.ugrade-btn{
+  padding: 10px;
+  margin: 0;
+  background-color: darkgrey;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: #611;
+  height: 60px;
+}
+
+.ugrade-icon{
+  width: 75px;
+  background-color: darkslategray;
+  margin: 0px;
+  display: inherit;
+  padding: 0;
+  margin: 0;
+  border: 2px solid darkred;
+}
+
+.ugrade-counter{
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid darkred;
+  background-color: chocolate;
+}
+p{
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: #611;
+}
+
+.title{
+  padding: 5px;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #611;
+}
+
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
