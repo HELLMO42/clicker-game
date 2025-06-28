@@ -43,15 +43,15 @@ $(function () {
 
 $(function () {
   $(".btn-signin").click(function () {
-    loginUser();
-
-    $(".btn-animate").toggleClass("btn-animate-grow");
-    $(".welcome").toggleClass("welcome-left");
-    $(".cover-photo").toggleClass("cover-photo-down");
-    $(".frame").toggleClass("frame-short");
-    $(".profile-photo").toggleClass("profile-photo-down");
-    $(".btn-goback").toggleClass("btn-goback-up");
-    $(".forgot").toggleClass("forgot-fade");
+    if (loginUser()){
+        $(".btn-animate").toggleClass("btn-animate-grow");
+        $(".welcome").toggleClass("welcome-left");
+        $ (".cover-photo").toggleClass("cover-photo-down");
+        $(".frame").toggleClass("frame-short");
+        $(".profile-photo").toggleClass("profile-photo-down");
+        $(".btn-goback").toggleClass("btn-goback-up");
+        $(".forgot").toggleClass("forgot-fade");
+    };
   });
 });
 
@@ -85,8 +85,10 @@ function loginUser() {
     localStorage.setItem("currentUser", JSON.stringify(user));
     alert("Đăng nhập thành công!");
     showUserInfo(user);
+    return true
   } else {
     alert("Sai tài khoản hoặc mật khẩu!");
+    return false
   }
 }
 
